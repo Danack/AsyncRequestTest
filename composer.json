@@ -1,0 +1,12 @@
+{
+    "name": "dja/multi-request-test",
+
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "fzaninotto/faker": "*"
+    },
+    "require":{
+        "guzzle/guzzle": "v3.8.1",
+        "rdlowrey/artax" : ">=0.2.0"
+    }
+}
