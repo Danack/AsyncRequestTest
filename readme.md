@@ -3,8 +3,6 @@
 
 A really quick and dirty comparison of 26 parallel requests. The summary of which is for 3 runs of the code:
 
-strace -c php GuzzleTest.php
-
 
 Artax
 -----
@@ -81,4 +79,4 @@ I'll do a better analysis later, but what stands out is that:
 
 * Because of the retransmission it takes Guzzle 1979 packets to do the request, but Artax only uses 802.
 
-I think this may be because Guzzle is opening all the requests at once, which is overloading the small window size that Bing uses. Artax only opens 8 connections, which fit within the window size and
+I think this may be because Guzzle is opening all the requests at once, which is overloading the small window size that Bing uses. Artax only opens 8 connections, which fit within the window size and allows the data to be transferred quicker, even though less is being transferred at once.
