@@ -7,6 +7,8 @@ $startTime = microtime(true);
 $reactor = (new Alert\ReactorFactory)->select();
 $client = new Artax\AsyncClient($reactor);
 
+$client->setOption('maxConnectionsPerHost', 26);
+
 // Generate a request URI for each letter a-z
 $requests = array_map(function($alpha) { return 'http://www.bing.com/search?q=' . $alpha; }, range('a', 'z'));
 
